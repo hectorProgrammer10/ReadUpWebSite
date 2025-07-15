@@ -1,0 +1,56 @@
+.content-index{
+  background-image: url('../../assets/images/index/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* o ajusta según lo necesario */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.content-index p{
+  color: white;
+  font-size: 3rem;
+}
+
+.btns-index{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-index{
+  border-radius: 3rem;
+  width: 30rem;
+  height: 3rem;
+  margin-top: 1rem;
+  border: none;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+#btn-login{
+  background-color: rgba(150, 150, 150, 0.3);
+}
+#btn-login:hover{
+  background-color: rgba(150, 150, 150, 0.6);
+}
+#btn-logup{
+  background-color: rgba(150, 150, 150, 0.0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-index{
+    margin-top: -9rem;
+    height: 110vh;
+    padding: 3rem;
+  }
+  .btn-index{
+    width: 20rem; 
+  }
+}
+
