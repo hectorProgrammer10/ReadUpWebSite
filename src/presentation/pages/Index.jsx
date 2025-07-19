@@ -14,7 +14,9 @@ function Index() {
   const handleChange = () => {
     navigate('/login');
   }
-
+  const handleChangeCreate = () =>{
+    navigate('/register');
+  }
   return (
      <>
       <div className='content-index'>
@@ -23,7 +25,7 @@ function Index() {
           <button onClick={handleChange} id='btn-login' className='btn-index'>
             Iniciar sesión
           </button>
-          <button id='btn-logup' className='btn-index'>
+          <button onClick={handleChangeCreate} id='btn-logup' className='btn-index'>
             Crear una cuenta
           </button>
         </div>

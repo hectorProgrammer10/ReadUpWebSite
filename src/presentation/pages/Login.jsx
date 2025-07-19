@@ -12,11 +12,11 @@ function Login() {
     <Auth>
       <div className='content-login'>
           
-          <div className="box-login">
-            <div className='body-login'>
-              <div className='welcome-login'>
+          <div className="box-auth">
+            <div className='body-auth'>
+              <div className='welcome-auth'>
                 <img id='fondoLogin' src={url} alt="fondoLogin" />
-                <div className='titles-login'>
+                <div className='titles-auth'>
                   <p id='welcome'>Bienvenido de vuelta</p>
                   <p style={{color:'rgba(30,30,30,0.6)'}}>inicia sesión con tu cuenta</p>
                 </div>
@@ -35,7 +35,7 @@ function Login() {
               <button id='btnLogin' onClick={{}}>Iniciar sesión</button>
               <div className='register-login'>
                 ¿No tienes una cuenta?
-                <a href="/login" id='aRegyster'><strong>Resgistrate aqui</strong></a>
+                <a href="/register" id='aRegyster'><strong>Resgistrate aqui</strong></a>
               </div>
             </div>
           </div>

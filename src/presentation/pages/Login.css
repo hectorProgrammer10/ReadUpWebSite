@@ -1,11 +1,3 @@
-div{
-  display: flex;
-  flex-direction: column;
-}
-
-.body-login{
-  align-items: center;
-}
 
 .signIn-login{
   align-items: center;
@@ -14,30 +6,8 @@ div{
   color: #1B3F9A;
   font-size: xx-large;
 }
-.welcome-login{
-  align-items: center;
-  
-  width: 100%;
-  
-}
-.welcome-login p{
-  margin: auto;
-}
 
-input{
-  width: 90%;
-  height: 2.9rem;
-  border-radius: 1rem;
-  margin-top: 1.6rem;
-  border: none;
-  background-color: #C2DFFF;
 
-  color: #1B3F9A;
-}
-input:focus{
-  border: 2px solid rgba(27, 63, 154, 0.9)  !important;
-  outline: none;
-}
 .content-login{
   align-items: center;
   padding: 3rem;
@@ -46,10 +16,6 @@ input:focus{
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-}
-
-a{
-  text-decoration: none;
 }
 
 #aRegyster{
@@ -78,28 +44,9 @@ a{
   background-color: rgba(27, 63, 154, 0.9);
 }
 
-.box-login{
-  width: 30rem;
-  box-shadow: 3px 3px 30px rgba(60, 60, 60, 0.9);
-  height: 90vh;
-  justify-content: space-between;
-  padding-bottom: 3rem;
-  background-color: white;
 
-}
-.titles-login{
-  margin-top: 0.6rem;
-  
-}
 #fondoLogin{
   width: 100%;
   height: 20rem;
   object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .box-login{
-    width: 100%;
-  }
 }

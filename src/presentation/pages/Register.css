@@ -1,0 +1,96 @@
+
+.signUp-register{
+  align-items: center;
+}
+#welcome{
+  color: #1B3F9A;
+  font-size: xx-large;
+}
+
+
+.content-register{
+  align-items: center;
+  padding: 3rem;
+  /* background-image: url('../../assets/images/login/fondo2.jpg');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  height: 100vh;
+}
+
+.box-register{
+  justify-content: space-around;  
+}
+
+#aRegyster{
+  color: #1B3F9A !important;
+  margin-left: 1rem;
+}
+
+.register-register{
+  padding-top: 0.3rem;
+  display: flex;
+  flex-direction: row !important;
+}
+#btnLogin{
+  font-size: large;
+  width: 90%;
+  height: 2.9rem;
+  padding: 0.6rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #1B3F9A;
+  color: white;
+  cursor: pointer;
+  
+}
+#btnLogin:hover{
+  background-color: rgba(27, 63, 154, 0.9);
+}
+
+
+#fondoLogin{
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+
+    .login-container-register {
+      text-align: center;
+      width: 100%;
+      padding-bottom: 1rem;
+    }
+
+    .login-container-register p {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .social-buttons-register {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-button-register {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .social-button-register:hover {
+      transform: scale(1.1);
+    }
+
+    .social-button-register img {
+      width: 24px;
+      height: 24px;
+    }
