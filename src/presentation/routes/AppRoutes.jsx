@@ -11,6 +11,7 @@ const AppRoutes = () => (
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/privacidad" element={<PrivacyNotice></PrivacyNotice>}></Route>
+      <Route path='/login' element={<Login></Login>}></Route>
     </Routes>
   </BrowserRouter>
 );

@@ -3,16 +3,24 @@ import Auth from "../layouts/Auth";
 import fondo from '../../assets/images/index/fondo.jpeg'
 
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './Index.css'
 
 function Index() {
+  const navigate = useNavigate();
+
+
+  const handleChange = () => {
+    navigate('/login');
+  }
+
   return (
      <>
       <div className='content-index'>
         <p>Sumergete en tu proxima gran historia</p>
         <div className="btns-index">
-          <button id='btn-login' className='btn-index'>
+          <button onClick={handleChange} id='btn-login' className='btn-index'>
             Iniciar sesión
           </button>
           <button id='btn-logup' className='btn-index'>
