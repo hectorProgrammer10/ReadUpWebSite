@@ -31,6 +31,10 @@
   position: absolute;
   background-color: white;
 }
+.gender-quiz{
+  position: absolute;
+  background-color: white;
+}
 
 
 .fade-in {
@@ -40,6 +44,35 @@
 
 .fade-in.visible {
   opacity: 1;
+}
+
+
+
+
+.p1-quiz{
+  color: #1B3F9A;
+  font-size: 2rem;
+  text-align: center;
+}
+.p2-quiz{
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+.btn-disabled {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-enabled {
+  cursor: pointer;
+}
+
+.active-gender{
+  background-color: #1B3F9A;
+  color: white;
 }
 
 /* Responsive */

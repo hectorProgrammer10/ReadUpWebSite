@@ -67,10 +67,14 @@
   height: 2.9rem;
   border: none;
   width: 100%;
+  transition: background-color 0.3s ease;
+
 }
 #btn-age:hover{
   background-color: rgba(27, 63, 154, 0.9);
 }
+
+
 
 @keyframes fadeInUp {
   0% {

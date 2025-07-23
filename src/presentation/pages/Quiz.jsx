@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 import QuizPage from '../layouts/QuizPage'
 import Age from '../components/Age'
+import Gender from '../components/Gender'
 
 import './Quiz.css'
 
@@ -11,10 +12,14 @@ import url from '../../assets/images/quiz/soporte-personalizado.png'
 
 function Quiz() {
   const [changeScreen, setChangeScreen] = useState(false);
+  
   const [showBtn, setShowBtn] = useState(false);
+  
+  
   const [fadeClass, setFadeClass] = useState('fade-in');
 
   const [showAge, setShowAge] = useState(false);
+  const [showGender, setShowGender] = useState(false);
 
  
 
@@ -42,6 +47,10 @@ useEffect(() => {
 const handleAge = () =>{
   setShowAge(true);
 }
+const handleGender = () =>{
+  setShowAge(false);
+  setShowGender(true);
+}
 
 
  
@@ -53,18 +62,23 @@ const handleAge = () =>{
         <div className='imgSoporte-quiz'>
           <img src={url} alt="soporte" id='soporte-quiz'/>
         </div>
-        <p style={{color:'#1B3F9A', fontSize:'2rem', textAlign:'center'}}>Vamos a personalizar tu Experiencia</p>
-        <p style={{textAlign:'center'}}>Para personalizar tu experiencia haremos una preguntas para conocerte mejor</p>
+        <p className='p1-quiz'>Vamos a personalizar tu Experiencia</p>
+        <p className='p2-quiz'>Para personalizar tu experiencia haremos una preguntas para conocerte mejor</p>
         {changeScreen && 
           <div className={fadeClass} style={{color:'rgba(60,60,60,0.6)', fontSize:'1.3rem'}}>Toca cualquier parte de la pantalla</div>
         }
         {showBtn &&
-          <button id='btn-quiz' className={fadeClass} onClick={handleAge}>Continuar</button>
+          <button id='btn-quiz' className={fadeClass} onClick={handleAge} >Continuar</button>
         }
 
         {showAge &&
           <div className='age-quiz'>
-            <Age></Age>
+            <Age handleGender={handleGender}></Age>
+          </div>
+        }
+        {showGender &&
+          <div className='gender-quiz'>
+            <Gender></Gender>
           </div>
         }
       </div>

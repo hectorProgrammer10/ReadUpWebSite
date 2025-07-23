@@ -1,0 +1,44 @@
+.content-gender{
+  width: 33rem;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 100; 
+}
+
+.btns-gender{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.btns-gender button{
+  width: 6rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.3rem;
+
+}
+
+#btn-gender{
+  color: white;
+  background-color: #1B3F9A;
+  border-radius: 2rem;
+  height: 2.9rem;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#btn-gender:hover{
+  background-color: rgba(27, 63, 154, 0.9);
+}
+
+@media (max-width: 768px) {
+  .content-gender{
+    width: 25rem;
+    padding-top: 1rem;
+  }
+}

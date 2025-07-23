@@ -5,9 +5,10 @@ import './Age.css'
 
 import QuizPage from '../layouts/QuizPage'
 
-function Age() {
+function Age({handleGender}) {
   const [selectedAge, setSelectedAge] = useState(null);
   const ageRefs = useRef({});
+  
 
 
   const ages = [];
@@ -25,12 +26,16 @@ function Age() {
     }
   }, [selectedAge]);
 
+  const handleContinuar = () =>{
+    handleGender();
+  }
+
   return (
     <QuizPage>
       <div className='content-age'>
         <div>
-          <p style={{color:'#1B3F9A', fontSize:'2rem', textAlign:'center'}}>¿Cuántos años tienes?</p>
-          <p style={{textAlign:'center'}}>Dejanos saber tu edad para poder personalizar cosas solo para ti</p>
+          <p className='p1-quiz'>¿Cuántos años tienes?</p>
+          <p className='p2-quiz'>Dejanos saber tu edad para poder personalizar cosas solo para ti</p>
         </div>
         <div className="age-carousel-container">
           <div className="age-carousel">
@@ -46,7 +51,15 @@ function Age() {
           </div>
         </div>
 
-        <button id='btn-age'>Continuar</button>
+        <button
+          id='btn-age'
+          disabled={!selectedAge}
+          className={selectedAge ? 'btn-enabled' : 'btn-disabled'}
+          onClick={handleContinuar}
+        >
+          Continuar
+        </button>
+
 
       </div>
     </QuizPage>
