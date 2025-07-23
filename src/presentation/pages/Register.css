@@ -4,7 +4,7 @@
 }
 #welcome{
   color: #1B3F9A;
-  font-size: xx-large;
+  font-size: 2.6rem;
 }
 
 
@@ -16,6 +16,7 @@
   background-position: center;
   background-repeat: no-repeat; */
   height: 100vh;
+  background-color: rgba(16,33,76,0.06);
 }
 
 .box-register{

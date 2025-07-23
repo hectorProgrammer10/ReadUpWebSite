@@ -1,0 +1,51 @@
+.content-quiz{
+  height: 85vh;
+  width: 33rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.imgSoporte-quiz{
+  height: 16rem;
+}
+#soporte-quiz{
+  height: 100%;
+    object-fit: contain;
+}
+
+#btn-quiz{
+  color: white;
+  background-color: #1B3F9A;
+  border-radius: 2rem;
+  height: 2.9rem;
+  border: none;
+  width: 100%;
+}
+#btn-quiz:hover{
+  background-color: rgba(27, 63, 154, 0.9);
+}
+
+.age-quiz{
+  position: absolute;
+  background-color: white;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-quiz{
+    width: 25rem;
+    padding-top: 3rem;
+  }
+}

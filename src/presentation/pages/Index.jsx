@@ -4,6 +4,7 @@ import fondo from '../../assets/images/index/fondo.jpeg'
 
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import {useSound} from '../../hooks/useSound'
 
 import './Index.css'
 

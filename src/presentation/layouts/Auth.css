@@ -7,15 +7,20 @@
 input{
   width: 90%;
   height: 2.9rem;
-  border-radius: 1rem;
+  border-radius: 1.3rem;
   margin-top: 1.6rem;
   border: none;
   background-color: #C2DFFF;
-
+  padding-left: 1rem;
   color: #1B3F9A;
 }
+
+input:hover{
+  background-color: rgba(97, 147, 194,0.39);
+}
+
 input:focus{
-  border: 2px solid rgba(27, 63, 154, 0.9)  !important;
+  border: 3px solid rgba(27, 63, 154, 0.3)  !important;
   outline: none;
 }
 div{
@@ -45,8 +50,8 @@ a{
 
 .box-auth{
   width: 33rem;
-  box-shadow: 3px 3px 30px rgba(60, 60, 60, 0.9);
-  height: 90vh;
+  box-shadow: 3px 3px 36px rgba(218, 185, 185, 0.6);
+  height: 85vh;
   justify-content: space-between;
   padding-bottom: 3rem;
   background-color: white;

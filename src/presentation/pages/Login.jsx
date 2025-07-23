@@ -5,8 +5,14 @@ import './Login.css'
 import url from '../../assets/images/login/fondo2.jpg'
 
 import Auth from '../layouts/Auth'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleLinkRegister = () =>{
+    navigate('/register')
+  }
 
   return (
     <Auth>
@@ -35,7 +41,7 @@ function Login() {
               <button id='btnLogin' onClick={{}}>Iniciar sesión</button>
               <div className='register-login'>
                 ¿No tienes una cuenta?
-                <a href="/register" id='aRegyster'><strong>Resgistrate aqui</strong></a>
+                <a href="#" id='aRegyster'><strong onClick={handleLinkRegister}>Resgistrate aqui</strong></a>
               </div>
             </div>
           </div>

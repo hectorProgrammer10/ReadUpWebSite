@@ -5,8 +5,19 @@ import Auth from '../layouts/Auth'
 import './Register.css'
 
 import url from "../../assets/images/register/iconogoogle.png"
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
+  const navigate = useNavigate();
+
+  const handleResgister = () =>{
+    navigate('/quiz')
+  }
+
+  const handleLinkLogin = () =>{
+    navigate('/login')
+  }
+
   return (
     <Auth>
       <div className='content-register'>
@@ -31,12 +42,12 @@ function Register() {
       
       
                   <div className='signUp-register'>
-                    <button id='btnLogin' onClick={{}}>Resgistrate</button>
+                    <button id='btnLogin' onClick={handleResgister}>Resgistrate</button>
 
                     <div class="login-container-register">
                       <p>O Continua con</p>
                       <div class="social-buttons-register">
-                        <a href="#" class="social-button-register">
+                        <a href="" class="social-button-register">
                           <img src={url} alt="Google"/>
                         </a>
                       </div>
@@ -45,7 +56,7 @@ function Register() {
 
                     <div className='register-register'>
                       ¿Ya tienes una cuenta?
-                      <a href="/login" id='aRegyster'><strong>Inicia sesión aqui</strong></a>
+                      <a href="" id='aRegyster'><strong onClick={handleLinkLogin}>Inicia sesión aqui</strong></a>
                     </div>
                   </div>
                 </div>
