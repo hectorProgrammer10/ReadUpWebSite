@@ -6,6 +6,8 @@ import QuizPage from '../layouts/QuizPage'
 import Age from '../components/Age'
 import Gender from '../components/Gender'
 import GenderBooks from '../components/GenderBooks'
+import LevelReader from '../components/LevelReader'
+import Objective from '../components/Objective'
 
 import './Quiz.css'
 
@@ -22,6 +24,8 @@ function Quiz() {
   const [showAge, setShowAge] = useState(false);
   const [showGender, setShowGender] = useState(false);
   const [showGenderBooks, setShowGenderBooks] = useState(false);
+  const [showLevelReader, setShowLevelReader] = useState(false);
+  const [showObjective, setShowObjective] = useState(false);
 
  
 
@@ -46,6 +50,9 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, []);
 
+
+
+
 const handleAge = () =>{
   setShowAge(true);
 }
@@ -56,6 +63,14 @@ const handleGender = () =>{
 const handleGenderBooks = () =>{
   setShowGender(false);
   setShowGenderBooks(true);
+}
+const handleLevelReader = () =>{
+  setShowGenderBooks(false);
+  setShowLevelReader(true);
+}
+const handleObjective = () =>{
+  setShowLevelReader(false);
+  setShowObjective(true);
 }
 
 
@@ -89,7 +104,17 @@ const handleGenderBooks = () =>{
         }
         {showGenderBooks &&
           <div className="component-quiz">
-            <GenderBooks></GenderBooks>
+            <GenderBooks handleLevelReader={handleLevelReader}></GenderBooks>
+          </div>
+        }
+        {showLevelReader &&
+          <div className="component-quiz">
+            <LevelReader handleObjective={handleObjective}></LevelReader>
+          </div>
+        }
+        {showObjective &&
+          <div className='component-quiz'>
+            <Objective></Objective>
           </div>
         }
       </div>

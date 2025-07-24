@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import QuizPage from '../layouts/QuizPage';
 import './GenderBooks.css';
 
-function GenderBooks() {
+function GenderBooks({handleLevelReader}) {
   const genders = [
     'Fantasía', 'Ciencia ficción', 'Romance', 'Misterio', 'Terror', 'Aventura',
     'Drama', 'Histórico', 'Biografía', 'Poesía', 'Autoayuda', 'Comedia'
@@ -43,6 +43,7 @@ function GenderBooks() {
         <button
           disabled={selectedGenders.length === 0}
           className={`btn-quiz ${selectedGenders.length > 0 ? 'btn-enabled' : 'btn-disabled'}`}
+          onClick={handleLevelReader}
         >
           Continuar
         </button>

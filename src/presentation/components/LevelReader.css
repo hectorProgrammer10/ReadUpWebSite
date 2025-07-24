@@ -1,0 +1,41 @@
+.content-levelReader{
+  width: 33rem;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 100; 
+}
+
+.btns-levelReader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 60%;
+
+}
+
+.btns-levelReader button{
+  width: 9rem;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+}
+
+.active-levelReader{
+  background-color: #1B3F9A;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .content-levelReader{
+    width: 25rem;
+    padding-top: 1rem;
+  }
+  .btns-levelReader button{
+    padding: 0.6rem;
+    margin: 0.3rem;
+  }
+}
