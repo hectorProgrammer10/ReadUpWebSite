@@ -15,7 +15,7 @@
     object-fit: contain;
 }
 
-#btn-quiz{
+.btn-quiz{
   color: white;
   background-color: #1B3F9A;
   border-radius: 2rem;
@@ -23,15 +23,11 @@
   border: none;
   width: 100%;
 }
-#btn-quiz:hover{
+.btn-quiz:hover{
   background-color: rgba(27, 63, 154, 0.9);
 }
 
-.age-quiz{
-  position: absolute;
-  background-color: white;
-}
-.gender-quiz{
+.component-quiz{
   position: absolute;
   background-color: white;
 }
@@ -62,7 +58,7 @@
 
 .btn-disabled {
   background-color: rgba(0, 0, 0, 0.3) !important;
-  color: #aaa;
+
   cursor: not-allowed;
 }
 
@@ -70,10 +66,7 @@
   cursor: pointer;
 }
 
-.active-gender{
-  background-color: #1B3F9A;
-  color: white;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {

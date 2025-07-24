@@ -1,0 +1,41 @@
+.content-genderBooks{
+  width: 33rem;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 100; 
+}
+
+
+.btns-genderBooks{
+  display: inline !important;
+  text-align: center;
+  height: 60%;
+  padding: 1rem;
+}
+
+.btns-genderBooks button{
+  width: 7rem;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.active-genderBooks{
+  background-color: #1B3F9A;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .content-genderBooks{
+    width: 25rem;
+    padding-top: 1rem;
+  }
+  .btns-genderBooks button{
+    padding: 0.6rem;
+    margin: 0.3rem;
+  }
+}

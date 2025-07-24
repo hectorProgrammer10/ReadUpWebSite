@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import QuizPage from '../layouts/QuizPage'
 import Age from '../components/Age'
 import Gender from '../components/Gender'
+import GenderBooks from '../components/GenderBooks'
 
 import './Quiz.css'
 
@@ -20,6 +21,7 @@ function Quiz() {
 
   const [showAge, setShowAge] = useState(false);
   const [showGender, setShowGender] = useState(false);
+  const [showGenderBooks, setShowGenderBooks] = useState(false);
 
  
 
@@ -51,6 +53,10 @@ const handleGender = () =>{
   setShowAge(false);
   setShowGender(true);
 }
+const handleGenderBooks = () =>{
+  setShowGender(false);
+  setShowGenderBooks(true);
+}
 
 
  
@@ -68,17 +74,22 @@ const handleGender = () =>{
           <div className={fadeClass} style={{color:'rgba(60,60,60,0.6)', fontSize:'1.3rem'}}>Toca cualquier parte de la pantalla</div>
         }
         {showBtn &&
-          <button id='btn-quiz' className={fadeClass} onClick={handleAge} >Continuar</button>
+          <button className={`btn-quiz ${fadeClass}`} onClick={handleAge} >Continuar</button>
         }
 
         {showAge &&
-          <div className='age-quiz'>
+          <div className='component-quiz'>
             <Age handleGender={handleGender}></Age>
           </div>
         }
         {showGender &&
-          <div className='gender-quiz'>
-            <Gender></Gender>
+          <div className='component-quiz'>
+            <Gender handleGenderBooks={handleGenderBooks}></Gender>
+          </div>
+        }
+        {showGenderBooks &&
+          <div className="component-quiz">
+            <GenderBooks></GenderBooks>
           </div>
         }
       </div>

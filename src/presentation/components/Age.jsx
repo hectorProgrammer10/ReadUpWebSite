@@ -52,9 +52,8 @@ function Age({handleGender}) {
         </div>
 
         <button
-          id='btn-age'
           disabled={!selectedAge}
-          className={selectedAge ? 'btn-enabled' : 'btn-disabled'}
+          className={`btn-quiz ${selectedAge ? 'btn-enabled' : 'btn-disabled'}`}
           onClick={handleContinuar}
         >
           Continuar
