@@ -59,7 +59,7 @@ function Objective() {
             ¿Cuántas páginas deseas leer al día?
           </label>
           <input type="number" id='input-objective' placeholder='Ej. 10' value={inputFill} onChange={(e) => setInputFill(e.target.value)}
-/>
+          />
         </div>
         <button 
           className={`btn-quiz ${selectedObjetiveLector && selectedObjetiveSemanal && inputFill>0 ? 'btn-enabled' : 'btn-disabled'}`}

@@ -40,7 +40,6 @@
 @media (max-width: 768px) {
   .content-objective{
     width: 25rem;
-    padding-top: 1rem;
     padding-bottom: 1rem;
   }
   .btns-objective button{

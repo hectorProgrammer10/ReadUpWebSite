@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 
 import Auth from '../layouts/Auth'
 
@@ -10,9 +11,28 @@ import { useNavigate } from 'react-router-dom'
 function Register() {
   const navigate = useNavigate();
 
-  const handleResgister = () =>{
-    navigate('/quiz')
-  }
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleResgister = () => {
+    const hasAtSymbol = email.includes('@');
+
+    if (userName !== '' && email !== '' && password !== '') {
+      if (!hasAtSymbol) {
+        alert("El correo debe contener '@'");
+        return;
+      }
+
+      if (password.length > 6) {
+        navigate('/quiz');
+      } else {
+        alert("Por favor ingresa una contraseña de al menos 6 dígitos");
+      }
+    } else {
+      alert("Por favor completa todos los campos!");
+    }
+  };
 
   const handleLinkLogin = () =>{
     navigate('/login')
@@ -31,13 +51,20 @@ function Register() {
                     </div>
                     <input 
                       type="text"
-                      placeholder='Username' />
+                      placeholder='Username'
+                      value={userName} onChange={(e) => setUserName(e.target.value)}
+                       />
+                      
                     <input 
                       type="email"
-                      placeholder='Email' />
+                      placeholder='Email' 
+                      value={email} onChange={(e) => setEmail(e.target.value)}
+                      />
                     <input 
                       type="password"
-                      placeholder='Password' />
+                      placeholder='Password' 
+                      value={password} onChange={(e) => setPassword(e.target.value)}
+                      />
                   </div>
       
       
