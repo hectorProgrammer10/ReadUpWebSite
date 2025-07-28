@@ -9,7 +9,7 @@ import url from "../../assets/images/register/iconogoogle.png"
 import { useNavigate } from 'react-router-dom'
 
 import { User } from '../../domain/models/userModel'
-import { registerUser } from '../../domain/usecases/RegisterUser'
+import { registerUser } from '../../domain/usecases/registerUser'
 
 import Quiz from './Quiz'
 
