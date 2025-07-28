@@ -18,7 +18,7 @@ function Admin() {
   try {
     
     const token = localStorage.getItem('auth_token') || ''; 
-    const adminYes = localStorage.getItem('admin_yes');
+    let adminYes = localStorage.getItem('admin_yes');
     if (adminYes = 'yes'){
       setAdmin(true);
     }
