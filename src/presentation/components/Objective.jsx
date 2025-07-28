@@ -5,10 +5,11 @@ import QuizPage from '../layouts/QuizPage'
 
 import './Objective.css'
 
-function Objective() {
+function Objective({handleSelectObjetive, handleSelectObjetiveSemanal, handleSelectPage, quizComplete}) {
   const [selectedObjetiveLector, setSelectedObjetiveLector] = useState(null);
   const [selectedObjetiveSemanal, setSelectedObjetiveSemanal] = useState(null);
-  const [inputFill, setInputFill] = useState('');
+
+  const [inputFill, setInputFill] = useState(0);
 
   const objetivoLector = ['Leer más géneros', 'Terminar más libros', 'Desarrollar hábito de lectura',
     'Reducir distracciones', 'Leer clásicos'
@@ -16,6 +17,13 @@ function Objective() {
   const objetivoSemanal = ['Leer todos los días', 'Leer 5 días a la semana', 'Leer fines de semana', 
     'Leer 3 días a la semana'
   ];
+
+  const handleContinuar = () =>{
+    handleSelectObjetive(selectedObjetiveLector);
+    handleSelectObjetiveSemanal(selectedObjetiveSemanal);
+    handleSelectPage(inputFill);
+    quizComplete();
+  }
 
   return (
     <QuizPage>
@@ -63,6 +71,7 @@ function Objective() {
         </div>
         <button 
           className={`btn-quiz ${selectedObjetiveLector && selectedObjetiveSemanal && inputFill>0 ? 'btn-enabled' : 'btn-disabled'}`}
+          onClick={handleContinuar}
         >Continuar</button>
       </div>
     </QuizPage>

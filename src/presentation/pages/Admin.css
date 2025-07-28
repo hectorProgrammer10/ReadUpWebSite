@@ -1,0 +1,183 @@
+.seccion_canva{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 1%;
+}
+.seccion_container{
+  width: 33rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding-bottom: 2%;
+  padding-top: 1%;
+  margin-top: 3%;
+}
+.seccion_container2{
+  width: 60rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding-bottom: 2%;
+  padding-top: 1%;
+  margin-top: 3%;
+}
+.seccion_container3{
+  width: 75rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding-bottom: 2%;
+  padding-top: 1%;
+  margin-top: 3%;
+}
+
+.seccion_apartado{
+  width: 89%;
+  padding: 2%;
+  overflow: auto;
+  margin-bottom: 1.2rem;
+  transition: 0.1s ease;
+}
+
+.seccion_apartadoW{
+  width: 89%;
+  padding: 2%;
+  overflow: auto;
+  background-color: white;
+  margin-bottom: 1.2rem;
+  transition: 0.1s ease;
+}
+
+.seccion_tabla{
+  width: 100%;
+  border-collapse: collapse;
+      /* font-size: 0.8rem; */
+  border: 1px solid #dddddd;
+}
+.seccion_tabla th{
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+.seccion_tabla td {
+  border-right: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+.seccion_tabla tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.seccion_tabla tr:hover {
+  background-color: #ddd;
+  
+}
+
+
+
+
+/*-------------------*/
+.tabla_proyectos_admin{
+  
+}
+
+.adminP_fx:hover{
+  transform: scale(1.006);
+}
+
+.btn_pAdmin{
+  /* margin-left: 1rem; */
+  background-color: rgba(0, 0, 0, 0);
+  width: 6rem;
+  border: 2px solid rgba(50, 50, 50, 0.6);
+  margin-top: 1rem;
+}
+.btn_pAdmin:hover{
+  background-color: rgba(150, 150, 150, 0.1);
+}
+.apartado_pAdmin{
+  overflow: auto;
+}
+
+.tablaPadmin{
+  height: 100vh;
+  overflow: auto;
+}
+
+
+
+
+.aTablaPadmin{
+  background-color: rgba(0, 0, 0, 0);
+  color: blue !important;
+  border: none;
+}
+
+.aTablaPadmin a:link{
+  background-color: rgba(0, 0, 0, 0);
+  color: blue !important;
+}
+
+
+
+/*-------------*/
+.borde{
+  border: 1px solid rgba(50, 50, 50, 0.6);
+  border-radius: 5px;
+}
+.borde2{
+  border: 2px solid rgba(50, 50, 50, 0.1);
+  border-radius: 5px;
+}
+.bordeW{
+  border: 1px solid rgba(250, 250, 250, 0.6);
+  border-radius: 5px;
+}
+.bordeR{
+  border-radius: 5px;
+}
+.bordeRed{
+  border: 1px solid red;
+}
+.box{
+  box-shadow: 1px 1px 50px 10px rgba(50, 50, 50, 0.4);
+  border-radius: 5px;
+}
+.box2{
+  box-shadow: 1px 1px 25px 5px rgba(50, 50, 50, 0.2);
+  border-radius: 5px;
+}
+.box3{
+  box-shadow: 1px 1px 25px 5px rgba(150, 150, 150, 0.4);
+  border-radius: 5px;
+}
+.box4{
+  box-shadow: 1px 1px 25px 5px rgba(150, 150, 150, 0.2);
+  border-radius: 5px;
+}
+.boxFX{
+  border-radius: 5px;
+  box-shadow: 1px 1px 25px 10px rgba(50, 50, 50, 0.2) !important;
+  transition: 0.2s;
+}
+.boxMax{
+  box-shadow: 3px 3px 3px 480px rgba(50, 50, 50, 0.3);
+  border-radius: 5px;
+}
+.boxFX:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 1px 50px 10px rgba(50, 50, 50, 0.4) !important;
+}
+.bar{
+  color: #D5D1C7;
+  background-color: #5D5D5D;
+}

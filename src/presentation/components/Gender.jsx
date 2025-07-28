@@ -5,10 +5,13 @@ import QuizPage from '../layouts/QuizPage'
 
 import './Gender.css'
 
-function Gender({handleGenderBooks}) {
+function Gender({handleGenderBooks, handleSelectGender}) {
   const [selectedGender, setSelectedGender] = useState(null);
 
-
+  const handleContinuar = () =>{
+    handleSelectGender(selectedGender);
+    handleGenderBooks();
+  }
 
   return (
     <QuizPage>
@@ -41,7 +44,7 @@ function Gender({handleGenderBooks}) {
         <button 
           disabled={!selectedGender}
           className={`btn-quiz ${selectedGender ? 'btn-enabled' : 'btn-disabled'}`}
-          onClick={handleGenderBooks}
+          onClick={handleContinuar}
         >Continuar</button>
       </div>
     </QuizPage>

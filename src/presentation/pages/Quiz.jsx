@@ -13,7 +13,7 @@ import './Quiz.css'
 
 import url from '../../assets/images/quiz/soporte-personalizado.png'
 
-function Quiz() {
+function Quiz({user, handleRegisterComplete}) {
   const [changeScreen, setChangeScreen] = useState(false);
   
   const [showBtn, setShowBtn] = useState(false);
@@ -26,6 +26,8 @@ function Quiz() {
   const [showGenderBooks, setShowGenderBooks] = useState(false);
   const [showLevelReader, setShowLevelReader] = useState(false);
   const [showObjective, setShowObjective] = useState(false);
+
+  // const [temporalDate, setTemporalDate] = useState('')
 
  
 
@@ -56,24 +58,47 @@ useEffect(() => {
 const handleAge = () =>{
   setShowAge(true);
 }
+const handleSelectAge = (age) =>{
+  user.edad = age;
+}
 const handleGender = () =>{
   setShowAge(false);
   setShowGender(true);
+}
+const handleSelectGender = (gender) =>{
+  user.generoSexual = gender;
 }
 const handleGenderBooks = () =>{
   setShowGender(false);
   setShowGenderBooks(true);
 }
+const handleSelectGenderBooks = (genderBooks) =>{
+  user.generoFavoritos = genderBooks;
+}
 const handleLevelReader = () =>{
   setShowGenderBooks(false);
   setShowLevelReader(true);
+}
+const handleSelectLevelReader = (levelReader) =>{
+  user.nivelLector = levelReader;
 }
 const handleObjective = () =>{
   setShowLevelReader(false);
   setShowObjective(true);
 }
+const handleSelectObejtive = (objetive) =>{
+  user.objetivoLector = objetive;
+}
+const handleSelectObejtiveSemanal = (objetiveSemanal) =>{
+  user.objetivoSemanal = objetiveSemanal;
+}
+const handleSelectPage = (paginas) =>{
+  user.paginasDiarias = paginas;
+}
 
-
+const quizComplete = () =>{
+  handleRegisterComplete();
+}
  
 
 
@@ -94,27 +119,27 @@ const handleObjective = () =>{
 
         {showAge &&
           <div className='component-quiz'>
-            <Age handleGender={handleGender}></Age>
+            <Age handleGender={handleGender} handleSelectAge={handleSelectAge}></Age>
           </div>
         }
         {showGender &&
           <div className='component-quiz'>
-            <Gender handleGenderBooks={handleGenderBooks}></Gender>
+            <Gender handleGenderBooks={handleGenderBooks} handleSelectGender={handleSelectGender}></Gender>
           </div>
         }
         {showGenderBooks &&
           <div className="component-quiz">
-            <GenderBooks handleLevelReader={handleLevelReader}></GenderBooks>
+            <GenderBooks handleLevelReader={handleLevelReader} handleSelectGenderBooks={handleSelectGenderBooks}></GenderBooks>
           </div>
         }
         {showLevelReader &&
           <div className="component-quiz">
-            <LevelReader handleObjective={handleObjective}></LevelReader>
+            <LevelReader handleObjective={handleObjective} handleSelectLevelReader={handleSelectLevelReader}></LevelReader>
           </div>
         }
         {showObjective &&
           <div className='component-quiz'>
-            <Objective></Objective>
+            <Objective handleSelectObjetive={handleSelectObejtive} handleSelectObjetiveSemanal={handleSelectObejtiveSemanal} handleSelectPage={handleSelectPage} quizComplete={quizComplete}></Objective>
           </div>
         }
       </div>

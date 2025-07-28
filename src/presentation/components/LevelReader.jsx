@@ -5,10 +5,13 @@ import QuizPage from '../layouts/QuizPage'
 
 import './LevelReader.css'
 
-function LevelReader({handleObjective}) {
+function LevelReader({handleObjective, handleSelectLevelReader}) {
   const [selectedLevel, setSelectedLevel] = useState(null);
 
-
+  const handleContinuar = () =>{
+    handleSelectLevelReader(selectedLevel);
+    handleObjective();
+  }
   return (
     <QuizPage>
       <div className="content-levelReader">
@@ -32,7 +35,7 @@ function LevelReader({handleObjective}) {
       <button 
           disabled={!selectedLevel}
           className={`btn-quiz ${selectedLevel ? 'btn-enabled' : ''}`}
-          onClick={handleObjective}
+          onClick={handleContinuar}
         >Continuar</button>
       </div>
       

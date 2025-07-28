@@ -34,7 +34,7 @@ function PrivacyNoticeSimple() {
       enviando un correo a: <a href="mailto:privacidad@readup.app">privacidad@readup.app</a>.
 
       Para conocer el aviso de privacidad integral, visite:
-      <a href="https://readupapp.vercel.app/">https://readupapp.vercel.app/</a>
+      <a href="https://readupapp.vercel.app/privacidad">https://readupapp.vercel.app/privacidad</a>
       
     </p>
 

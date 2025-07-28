@@ -5,7 +5,7 @@ import './Age.css'
 
 import QuizPage from '../layouts/QuizPage'
 
-function Age({handleGender}) {
+function Age({handleGender, handleSelectAge}) {
   const [selectedAge, setSelectedAge] = useState(null);
   const ageRefs = useRef({});
   
@@ -27,6 +27,7 @@ function Age({handleGender}) {
   }, [selectedAge]);
 
   const handleContinuar = () =>{
+    handleSelectAge(selectedAge);
     handleGender();
   }
 
