@@ -17,17 +17,23 @@ function Home() {
   const downloadRef = useRef(null);
   const funcRef = useRef(null);
   const indexRef = useRef(null);
+  let sesion = sessionStorage.getItem('sesion') || ' ';
 
   const [usuarios, setUsuarios] = useState([]);
+  const [viewBtns, setViewBtns] = useState(true);
 
-  const token = localStorage.getItem('token_read_up');
+  const token = localStorage.getItem('token_read_up') || ' ';
 
   const navigate = useNavigate();
 
 
   useEffect(() => {
     const refs = [whatRef, downloadRef, funcRef, indexRef];
-
+    if(sesion=='yes'){
+      setViewBtns(false);
+    }else{
+      setViewBtns(true);
+    }
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -98,10 +104,12 @@ function Home() {
           <div className='user-home align-left'>
             <img src={url2} alt="logo"/>
           </div>
-          <div className='btns-home align-right'>
-            <button id='btnRegister-home' className='box5' onClick={handleChangeCreate}>Registrarse</button>
-            <button id='btnLogin-home' className='box5' onClick={handleChange}>Iniciar sesión</button>
-          </div>
+          {viewBtns && 
+            <div className='btns-home align-right'>
+              <button id='btnRegister-home' className='box5' onClick={handleChangeCreate}>Registrarse</button>
+              <button id='btnLogin-home' className='box5' onClick={handleChange}>Iniciar sesión</button>
+            </div>
+          }
         </div>
 
         <div className='body-home'>

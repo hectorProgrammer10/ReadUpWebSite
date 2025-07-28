@@ -29,6 +29,7 @@ function Login() {
       if (res.ok) {
         console.log('✅ Login exitoso:', data);
         localStorage.setItem('auth_token', data.token);
+        sessionStorage.setItem('sesion', 'yes'); 
         if(email == 'admin@dev.com'){
           localStorage.setItem('admin_yes', 'yes');
           navigate('/admin');
