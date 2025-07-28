@@ -20,16 +20,16 @@ function LevelReader({handleObjective, handleSelectLevelReader}) {
         </p>
         <div className='btns-levelReader'>
         <button
-            className={selectedLevel === 'Avanzado' ? 'active-levelReader' : ''}
-            onClick={() => setSelectedLevel('Avanzado')}
+            className={selectedLevel === 'avanzado' ? 'active-levelReader' : ''}
+            onClick={() => setSelectedLevel('avanzado')}
         >Avanzado</button>
         <button
-            className={selectedLevel === 'Intermedio' ? 'active-levelReader' : ''}
-            onClick={() => setSelectedLevel('Intermedio')}
+            className={selectedLevel === 'intermedio' ? 'active-levelReader' : ''}
+            onClick={() => setSelectedLevel('intermedio')}
         >Intermedio</button>
         <button
-            className={selectedLevel === 'Principiante' ? 'active-levelReader' : ''}
-            onClick={() => setSelectedLevel('Principiante')}
+            className={selectedLevel === 'principiante' ? 'active-levelReader' : ''}
+            onClick={() => setSelectedLevel('principiante')}
         >Principiante</button>
       </div>
       <button 

@@ -4,8 +4,8 @@ import './GenderBooks.css';
 
 function GenderBooks({handleLevelReader, handleSelectGenderBooks}) {
   const genders = [
-    'Fantasía', 'Ciencia ficción', 'Romance', 'Misterio', 'Terror', 'Aventura',
-    'Drama', 'Histórico', 'Biografía', 'Poesía', 'Autoayuda', 'Comedia'
+    'fantasía', 'ciencia ficción', 'romance', 'misterio', 'terror', 'aventura',
+    'drama', 'histórico', 'biografía', 'poesía', 'autoayuda', 'comedia'
   ];
 
   const [selectedGenders, setSelectedGenders] = useState([]);

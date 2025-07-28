@@ -112,7 +112,7 @@ function Home() {
             </div>
             <div className='w2-home align-right'>
               <p style={{color:'white', fontSize:'4rem'}}>¿Qué es ReadUp?</p>
-              <p style={{width:'100%', textAlign:'justify', fontSize:'1.9rem', color:'white'}}> Aplicación móvil que motiva a
+              <p style={{width:'99%', textAlign:'justify', fontSize:'1.9rem', color:'white'}}> Aplicación móvil que motiva a
                 los jóvenes a leer mediante
                 retos, seguimiento
                 personalizado y comunidad

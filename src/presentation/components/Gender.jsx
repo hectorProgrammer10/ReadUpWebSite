@@ -28,13 +28,13 @@ function Gender({handleGenderBooks, handleSelectGender}) {
           <div className='btns-gender'>
             <button
               className={selectedGender === 'Masculino' ? 'active-gender' : ''}
-              onClick={() => setSelectedGender('Masculino')}
+              onClick={() => setSelectedGender('masculino')}
             >
               Masculino
             </button>
             <button
               className={selectedGender === 'Femenino' ? 'active-gender' : ''}
-              onClick={() => setSelectedGender('Femenino')}
+              onClick={() => setSelectedGender('femenino')}
             >
               Femenino
             </button>

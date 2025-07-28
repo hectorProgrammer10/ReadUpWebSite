@@ -29,17 +29,14 @@ function Register() {
     userName,         // nombreUsuario
     email,         // correo
     password,         // contrasena
-    '',         // nivelLector
-    0,          // puntuacionTotal
-    '',         // rango
-    [],         // historialBusqueda
     null,       // edad
     '',         // generoSexual
     [],         // generoFavoritos
+    '',         // nivelLector
     '',         // objetivoLector
     0,          // paginasDiarias
     '',         // objetivoSemanal
-    undefined   // id
+
   );
 
   const handleRegister = async () => {
@@ -75,7 +72,7 @@ function Register() {
     try {
       setIsLoading(true);
       await registerUser(newUser);
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       alert("Error al registrar: " + error.message);
     } finally {

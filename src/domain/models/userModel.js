@@ -2,51 +2,39 @@ export class User {
   constructor(
     nombreUsuario,
     correo,
-    contrasena,
-    nivelLector,
-    puntuacionTotal,
-    rango,
-    historialBusqueda,
+    contraseña,
     edad,
     generoSexual,
     generoFavoritos,
+    nivelLector,
     objetivoLector,
     paginasDiarias,
-    objetivoSemanal,
-    id
+    objetivoSemanal
   ) {
-    this.nombreUsuario = nombreUsuario;
-    this.correo = correo;
-    this.contrasena = contrasena;
-    this.nivelLector = nivelLector;
-    this.puntuacionTotal = puntuacionTotal;
-    this.rango = rango;
-    this.historialBusqueda = historialBusqueda;
-    this.edad = edad;
-    this.generoSexual = generoSexual;
-    this.generoFavoritos = generoFavoritos;
-    this.objetivoLector = objetivoLector;
-    this.paginasDiarias = paginasDiarias;
-    this.objetivoSemanal = objetivoSemanal;
-    this.id = id;
+    (this.nombreUsuario = nombreUsuario),
+      (this.correo = correo),
+      (this.contraseña = contraseña),
+      (this.edad = edad),
+      (this.generoSexual = generoSexual),
+      (this.generoFavoritos = generoFavoritos),
+      (this.nivelLector = nivelLector),
+      (this.objetivoLector = objetivoLector),
+      (this.paginasDiarias = paginasDiarias),
+      (this.objetivoSemanal = objetivoSemanal);
   }
 
   isValid() {
     return (
       this.nombreUsuario &&
       this.correo?.includes("@") &&
-      this.contrasena?.length >= 6 &&
-      this.nivelLector &&
-      this.puntuacionTotal !== undefined &&
-      this.rango &&
-      Array.isArray(this.historialBusqueda) &&
+      this.contraseña?.length >= 6 &&
       this.edad !== undefined &&
       this.generoSexual &&
       Array.isArray(this.generoFavoritos) &&
+      this.nivelLector &&
       this.objetivoLector &&
       this.paginasDiarias !== undefined &&
-      this.objetivoSemanal &&
-      this.id !== undefined
+      this.objetivoSemanal
     );
   }
 
