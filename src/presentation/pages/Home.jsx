@@ -20,29 +20,35 @@ function Home() {
   const downloadRef = useRef(null);
   const funcRef = useRef(null);
   const indexRef = useRef(null);
-  let sesion = sessionStorage.getItem('sesion') || ' ';
-
-  const [usuarios, setUsuarios] = useState([]);
-  const [viewBtns, setViewBtns] = useState(false);
-  const [viewOption, setViewOption] = useState(true);
+  
 
 
-  const [viewAdmin, setViewAdmin] = useState(true);
+  const [viewBtns, setViewBtns] = useState(true);
+  const [viewOption, setViewOption] = useState(false);
+
+
+  const [viewAdmin, setViewAdmin] = useState(false);
   const [viewUsuarios, setViewusuarios] = useState(true);
   const [viewPredic, setViewPredic] = useState(false);
-  const [viewHome, setViewHome] = useState(false);
+  const [viewHome, setViewHome] = useState(true);
 
-  const token = localStorage.getItem('token_read_up') || ' ';
 
   const navigate = useNavigate();
 
 
   useEffect(() => {
+    let sesion = sessionStorage.getItem('sesion') || ' ';
+    let adminAd = localStorage.getItem('admin_yes');
     const refs = [whatRef, downloadRef, funcRef, indexRef];
     if(sesion=='yes'){
       setViewBtns(false);
     }else{
-      setViewBtns(false);
+      setViewBtns(true);
+    }
+    if(adminAd == 'yes'){
+      setViewAdmin(true);
+      setViewHome(false);
+      setViewOption(true);
     }
     const observer = new IntersectionObserver(
       entries => {
@@ -73,32 +79,6 @@ function Home() {
     };
   }, []);
 
-  const handleGetUsuarios = async (event) => {
-    // event.preventDefault();
-    const fetchData = async () => {
-      try {
-        const response = await fetch(import.meta.env.VITE_API_USU, {
-          method: 'GET',
-          headers: {
-            'x-access-token': token,
-          },
-        });
-
-        const result = await response.json();
-        if (response.ok) {
-          setUsuarios(result.usuarios || []);
-        } else {
-          alert("error en la solicitud")
-        }
-      } catch (error) {
-        alert('Error en el servidor');
-      }
-    };
-
-    fetchData();
-  };
-
-
 
   const handleChange = () => {
     navigate('/login');
@@ -114,12 +94,18 @@ function Home() {
   const handleViewPredic = () =>{
     setViewusuarios(false);
     setViewPredic(true);
+    setShowMenu(!showMenu);
   }
   const handleViewAdmin = () =>{
     setViewusuarios(true);
     setViewPredic(false);
+    setShowMenu(!showMenu);
   }
-
+  const handleLogOut = () =>{
+    localStorage.removeItem('admin_yes')
+    sessionStorage.removeItem('sesion')
+    navigate('/login')
+  }
   
   
 
@@ -145,7 +131,7 @@ function Home() {
                 <div className="dropdown-content">
                   <button onClick={handleViewAdmin}>Ver Usuarios</button>
                   <button onClick={handleViewPredic}>Ver Comportamiento</button>
-                  <button onClick={() => console.log('Ver Comportamiento')}>
+                  <button onClick={handleLogOut}>
                     <img src={salirIcon} alt="" /> Log out
                   </button>
                 </div>

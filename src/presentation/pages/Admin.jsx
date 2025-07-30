@@ -24,7 +24,7 @@ function Admin({viewusuarios, viewPredic}) {
     
     const token = localStorage.getItem('auth_token') || ''; 
     let adminYes = localStorage.getItem('admin_yes');
-    if (adminYes = 'yes'){
+    if (adminYes == 'yes'){
       setAdmin(true);
     }
     const res = await fetch(import.meta.env.VITE_API_USERS, {
@@ -38,9 +38,9 @@ function Admin({viewusuarios, viewPredic}) {
 
     const data = await res.json();
     setUsuarios(data);
-    alert('✅ Usuarios cargados:', data);
+    console.log('✅ Usuarios cargados:', data);
   } catch (err) {
-    alert('❌ Error al cargar usuarios:', err);
+    console.log('❌ Error al cargar usuarios:', err);
   } finally {
     setLoading(false);
   }

@@ -37,7 +37,7 @@ function Login() {
         sessionStorage.setItem('sesion', 'yes'); 
         if(email == 'admin@dev.com'){
           localStorage.setItem('admin_yes', 'yes');
-          navigate('/admin');
+          navigate('/');
         }
         else{
           navigate('/');
