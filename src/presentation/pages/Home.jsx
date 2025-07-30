@@ -7,10 +7,13 @@ import './Home.css'
 import HomePage from '../layouts/HomePage'
 import PrivacyNoticeSimple from '../components/PrivacyNoticeSimple'
 import Index from './Index'
+import Admin from './Admin'
 
 import url2 from '../../assets/icons/logo2.svg';
 import qrApp from '../../assets/images/qrcode.png'
 import videoApp from '../../assets/videos/video_demo_app_readup.mp4';
+import menuIcon from '../../assets/icons/menuHamburguer.svg';
+import salirIcon from '../../assets/icons/salir.svg';
 
 function Home() {
   const whatRef = useRef(null);
@@ -20,7 +23,14 @@ function Home() {
   let sesion = sessionStorage.getItem('sesion') || ' ';
 
   const [usuarios, setUsuarios] = useState([]);
-  const [viewBtns, setViewBtns] = useState(true);
+  const [viewBtns, setViewBtns] = useState(false);
+  const [viewOption, setViewOption] = useState(true);
+
+
+  const [viewAdmin, setViewAdmin] = useState(true);
+  const [viewUsuarios, setViewusuarios] = useState(true);
+  const [viewPredic, setViewPredic] = useState(false);
+  const [viewHome, setViewHome] = useState(false);
 
   const token = localStorage.getItem('token_read_up') || ' ';
 
@@ -32,7 +42,7 @@ function Home() {
     if(sesion=='yes'){
       setViewBtns(false);
     }else{
-      setViewBtns(true);
+      setViewBtns(false);
     }
     const observer = new IntersectionObserver(
       entries => {
@@ -97,6 +107,22 @@ function Home() {
     navigate('/register');
   }
 
+
+
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleViewPredic = () =>{
+    setViewusuarios(false);
+    setViewPredic(true);
+  }
+  const handleViewAdmin = () =>{
+    setViewusuarios(true);
+    setViewPredic(false);
+  }
+
+  
+  
+
   return (
     <HomePage>
       <div className='content-home'>
@@ -110,71 +136,94 @@ function Home() {
               <button id='btnLogin-home' className='box5' onClick={handleChange}>Iniciar sesión</button>
             </div>
           }
+          {viewOption &&
+            <div className="dropdown-wrapper">
+              <button className="dropdown-trigger" onClick={() => setShowMenu(!showMenu)}>
+                <img src={menuIcon} alt="" />
+              </button>
+              {showMenu && (
+                <div className="dropdown-content">
+                  <button onClick={handleViewAdmin}>Ver Usuarios</button>
+                  <button onClick={handleViewPredic}>Ver Comportamiento</button>
+                  <button onClick={() => console.log('Ver Comportamiento')}>
+                    <img src={salirIcon} alt="" /> Log out
+                  </button>
+                </div>
+              )}
+            </div>
+          }
         </div>
 
-        <div className='body-home'>
-          <div className='what-home' ref={whatRef}>
-            <div className='w1-home align-left'>
-              <img src={url2} alt="" />
-              <p style={{color:'white', fontSize:'6rem'}}>ReadUp</p>
-            </div>
-            <div className='w2-home align-right'>
-              <p style={{color:'white', fontSize:'4rem'}}>¿Qué es ReadUp?</p>
-              <p style={{width:'99%', textAlign:'justify', fontSize:'1.9rem', color:'white'}}> Aplicación móvil que motiva a
-                los jóvenes a leer mediante
-                retos, seguimiento
-                personalizado y comunidad
-                lectora. Convierte la lectura en
-                una experiencia interactiva y
-                divertida.
-              </p>
-              <strong style={{fontSize:'1.9rem', color:'white'}}>Sube de nivel, un libro a la vez</strong>
-            </div>
-          </div>
+        {viewAdmin &&
+          <Admin viewusuarios={viewUsuarios} viewPredic={viewPredic}></Admin>
+        }
 
-          <div className='download-home' ref={downloadRef}>
-            <div className="qr-home align-left">
-              <div>
-                <p style={{fontSize:'3rem', color:'white'}}>Descarga nuestra App!</p>
+        {viewHome &&
+          <div className='body-home'>
+            <div className='what-home' ref={whatRef}>
+              <div className='w1-home align-left'>
+                <img src={url2} alt="" />
+                <p style={{color:'white', fontSize:'6rem'}}>ReadUp</p>
               </div>
-              <div className='qrImage-home bordee2'>
-                <img src={qrApp} alt="qr" />
+              <div className='w2-home align-right'>
+                <p style={{color:'white', fontSize:'4rem'}}>¿Qué es ReadUp?</p>
+                <p style={{width:'99%', textAlign:'justify', fontSize:'1.9rem', color:'white'}}> Aplicación móvil que motiva a
+                  los jóvenes a leer mediante
+                  retos, seguimiento
+                  personalizado y comunidad
+                  lectora. Convierte la lectura en
+                  una experiencia interactiva y
+                  divertida.
+                </p>
+                <strong style={{fontSize:'1.9rem', color:'white'}}>Sube de nivel, un libro a la vez</strong>
               </div>
             </div>
-            <div className="demo-home align-right">
-              <div>
-                <p style={{fontSize:'3rem', color:'white'}}>Cómo Funciona ReadUp : <br /> <span style={{fontSize:'2rem', color:'rgba(250,250,250,0.9)'}}>Flujo y Funcionalidades</span></p>
-              </div>
-              <div className='demoVideo-home bordee2'>
-                <video  controls>
-                  <source src={videoApp} type="video/mp4" />
-                  Tu navegador no soporta el elemento de video.
-                </video>
-              </div>
-            </div>
-          </div>
 
-          <div className='func-home' ref={funcRef}>
-            <p style={{fontSize:'6rem', color:'#1B3F9A'}}>Funcionalidades para los usuarios</p>
-            <div className='listFunc-home'>
-              <ul>
-                <li>Registro y personalización del perfil lector</li>
-                <li>Lectura digital desde el celular</li>
-                <li>Retos, quizzes y logros</li>
-              </ul>
-              <ul>
-                <li>Recomendaciones personalizadas</li>
-                <li>Seguimiento de hábitos</li>
-              </ul>
+            <div className='download-home' ref={downloadRef}>
+              <div className="qr-home align-left">
+                <div>
+                  <p style={{fontSize:'3rem', color:'white'}}>Descarga nuestra App!</p>
+                </div>
+                <div className='qrImage-home bordee2'>
+                  <img src={qrApp} alt="qr" />
+                </div>
+              </div>
+              <div className="demo-home align-right">
+                <div>
+                  <p style={{fontSize:'3rem', color:'white'}}>Cómo Funciona ReadUp : <br /> <span style={{fontSize:'2rem', color:'rgba(250,250,250,0.9)'}}>Flujo y Funcionalidades</span></p>
+                </div>
+                <div className='demoVideo-home bordee2'>
+                  <video  controls>
+                    <source src={videoApp} type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                </div>
+              </div>
             </div>
-          </div>
 
-          
-        </div>
-        <div className='index-home' ref={indexRef}>
-          <Index></Index>
-        </div>
-        <PrivacyNoticeSimple></PrivacyNoticeSimple>
+            <div className='func-home' ref={funcRef}>
+              <p style={{fontSize:'6rem', color:'#1B3F9A'}}>Funcionalidades para los usuarios</p>
+              <div className='listFunc-home'>
+                <ul>
+                  <li>Registro y personalización del perfil lector</li>
+                  <li>Lectura digital desde el celular</li>
+                  <li>Retos, quizzes y logros</li>
+                </ul>
+                <ul>
+                  <li>Recomendaciones personalizadas</li>
+                  <li>Seguimiento de hábitos</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className='index-home' ref={indexRef}>
+              <Index></Index>
+            </div>
+            <PrivacyNoticeSimple></PrivacyNoticeSimple>          
+          </div>
+        }
+
+        
 
         <div className='footer-home'>
           © {new Date().getFullYear()} 

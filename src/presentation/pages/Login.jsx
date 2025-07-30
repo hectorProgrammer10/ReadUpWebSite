@@ -15,13 +15,18 @@ function Login() {
   };
 
   const handleLogin = async () => {
+
     try {
       const res = await fetch(import.meta.env.VITE_API_LOGIN, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+        correo: email,
+        contraseña: password
+      })
+
       });
 
       const data = await res.json();

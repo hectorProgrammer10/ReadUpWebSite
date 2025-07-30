@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import reload from '../../assets/icons/reload.svg';
 import './Admin.css';
 
-function Admin() {
+import UsuariosPredic from './UsuariosPredic';
+
+
+function Admin({viewusuarios, viewPredic}) {
   const [usuarios, setUsuarios] = useState([]);
   const [loading, setLoading] = useState(false);
   const [admin, setAdmin] = useState(false);
+  const [adminFake, setAdminFake] = useState(false);
+  const [viewUsuariosPredic, setUsuariosPredic] = useState(true);
 
   const reloadStyle = {
     height: '100%',
@@ -26,7 +31,7 @@ function Admin() {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=UTF-8',
         'Accept': 'application/json'
       }
     });
@@ -47,21 +52,23 @@ function Admin() {
 
   return (
     <div className='seccion_canva'>
-      <div style={{color: 'red', fontSize:'9rem'}}>No eres admin, sal de aqui.</div>
-      {admin && 
-        <div className='seccion_container2 box3 apartado_pAdmin'>
-          <div className="seccion_apartadoW box3 adminP_fx">
+      {adminFake &&
+        <div style={{color: 'red', fontSize:'9rem'}}>No eres admin, sal de aqui.</div>
+      }
+      {viewusuarios && 
+        <div className='seccion_container2 apartado_pAdmin'>
+          <div className="seccion_apartadoW borde2 adminP_fx">
             <h3>Administrador</h3>
           </div>
 
-          <div className="seccion_apartadoW box3 adminP_fx">
-            Proyectos Registrados: {usuarios.length}
+          <div className="seccion_apartadoW borde2 adminP_fx">
+            Usuarios Registrados: {usuarios.length}
             <button className='btn_pAdmin borde2' onClick={fetchUsuarios} disabled={loading}>
               <img src={reload} alt="reload" style={reloadStyle} />
             </button>
           </div>
 
-          <div className="seccion_apartadoW box3 tabla_proyectos_admin adminP_fx">
+          <div className="seccion_apartadoW borde2 tabla_proyectos_admin adminP_fx">
             <div className="tablaPadmin">
               <table className='seccion_tabla'>
                 <thead>
@@ -95,6 +102,10 @@ function Admin() {
             </div>
           </div>
         </div>
+      }
+
+      {viewPredic &&
+        <UsuariosPredic></UsuariosPredic>
       }
     </div>
   );
